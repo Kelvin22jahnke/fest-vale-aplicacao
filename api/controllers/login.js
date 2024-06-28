@@ -2,11 +2,11 @@ import { db } from "../db.js";
 
 export const postLogin = (req, res) => {
 
-    const sql = "SELECT * FROM usuarios WHERE NOME = ? AND SENHA = ?";
 
+    const sql = "SELECT * FROM usuarios WHERE NOME = ? AND SENHA = ?";
     //Atribui os valores digitados da página de Login.
-    const nome = req.body.NOME;
-    const senha = req.body.SENHA;
+    const nome = req.body.nome;
+    const senha = req.body.senha;
 
     //Executa o comando slq
     db.query(sql, [nome, senha], (err, result) => {
